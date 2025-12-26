@@ -17,7 +17,7 @@ $ ./level0 42
 No !
 ```
 
-Let's use gdb to disassemble the main function and understand it.
+Let's use ``gdb`` to disassemble the main function and understand it.
 
 ```
 $ gdb --args ./level0 42
@@ -28,9 +28,9 @@ disas main
 ...
 ```
 
-The main function calls atoi and expects argv[1] to be equal to 423 in order to continue.
+The main function calls atoi and expects ``argv[1]`` to be equal to ``423`` in order to continue.
 </br>
-We can also see calls to strdup, getegid, geteuid, setresgid, setresuid, execv, fwrite.
+We can also see calls to ``strdup``, ``getegid``, ``geteuid``, ``setresgid``, ``setresuid``, ``execv``, ``fwrite``.
 
 ```
 $ ./level0 423
