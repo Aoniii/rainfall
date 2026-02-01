@@ -89,7 +89,7 @@ We can see that a comparison is holding us back.
 </br>
 0x40 = 64
 </br>
-You need to set ``0x804988c`` to ``64``.
+We need to set ``0x804988c`` to ``64``.
 
 ```
  80484da:       a1 8c 98 04 08          mov    0x804988c,%eax
