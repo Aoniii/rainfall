@@ -6,14 +6,14 @@ void p() {
 	char 	buff[76];
 
 	fflush(stdout);
-	gets(buf);
-	retaddr = *(int *)(buf + 76);
+	gets(buff);
+	retaddr = *(int *)(buff + 76);
 	if ((retaddr & 0xb0000000) == 0xb0000000) {
 		printf("(%p)\n",(void*)retaddr);
 		exit(1);
 	}
-	puts(buf);
-	strdup(buf);
+	puts(buff);
+	strdup(buff);
 	return;
 }
 
