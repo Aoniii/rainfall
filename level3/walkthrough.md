@@ -5,7 +5,7 @@ We can see that we have an executable file, which waits for input when launched,
 ```
 $ ls
 level3
-level3@RainFall:~$ ./level3
+$ ./level3
 test
 test
 ```
