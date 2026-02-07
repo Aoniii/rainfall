@@ -8,7 +8,11 @@ total 8
 -rwsr-s---+ 1 level2 users 5138 Mar  6  2016 level1
 ```
 
-Although the ``main`` function appears trivial, it allocates an 80‑byte buffer and uses ``gets``, which allows more than the expected 64 bytes to be written.
+The ``main`` function reserves ``80 bytes on the stack`` (0x50 in hexadecimal).
+</br>
+However, looking at the instruction ``lea 0x10(%esp)``, %eax, we can see that the buffer starts 16 bytes after the beginning of this space.
+</br>
+Using gets therefore ``allows the remaining 64 bytes`` (80−16=64) to be exceeded in order to ``corrupt the stack``.
 
 ```
 $ gdb ./level1
@@ -86,7 +90,11 @@ With the argument ``/bin/sh``.
 0x8048584:       "/bin/sh"
 ```
 
-We create an ``80‑byte payload`` in order to ``overflow the buffer`` and ``overwrite`` the return address with the address of the ``run`` function, written in ``little‑endian`` format.
+We create a ``payload of 76 padding bytes``.
+</br>
+These 76 bytes correspond to the 64 bytes of the buffer, plus 12 bytes ``to reach the return address`` (EIP), ``overwriting the Saved EBP`` in the process.
+</br>
+We then replace this EIP with the address of the run function (0x08048444) in ``little-endian format``.
 
 ```
 $ (python -c 'print "0" * 76 + "\x44\x84\x04\x08"') | ./level1
