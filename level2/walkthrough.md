@@ -74,7 +74,9 @@ https://en.wikipedia.org/wiki/Return-to-libc_attack
  80484e7:       8d 45 b4                lea    -0x4c(%ebp),%eax
 ```
 
-You can also see a protection measure, which can be bypassed by entering the address of the ``ret`` of the ``main``, to go to the end of the program when it attempts to make the comparison.
+The program contains a ``security`` feature that checks the return address: if it starts with ``0xb`` (which corresponds to the stack), the program ``detects the attack and stops``.
+</br>
+To get around this, we can't jump directly to shellcode in the stack. We'll use a transition address located in the code segment (0x08...), namely the main ret instruction (0x0804854b), which will then allow us to bounce back to LibC.
 
 ```
  80484fb:       25 00 00 00 b0          and    $0xb0000000,%eax
@@ -156,7 +158,7 @@ cat /home/user/level3/.pass
 
 Step 1: Fill the buffer.
 </br>
-Step 2: Pass the protection, entering the return address of the main
+Step 2: Bypass protection by using a legitimate return address (0x0804854b) to jump to the rest of the payload.
 </br>
 Step 3: Call system with /bin/sh
 
