@@ -167,7 +167,9 @@ We have a huge main.
  804873f:       90                      nop
 ```
 
-We will use a ``decompiler`` to understand this main function. We can see a simplified version in ``source.c``.
+We will use a ``decompiler`` to understand this main function (with dogbolt.org).
+</br>
+We can see a simplified version in ``source.c``.
 
 We can see several things:
 - system that is called with ``/bin/sh``.
