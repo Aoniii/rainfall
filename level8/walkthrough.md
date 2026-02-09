@@ -167,7 +167,7 @@ We have a huge main.
  804873f:       90                      nop
 ```
 
-We will use a ``decompiler`` to understand this main function (with <<https://www.dogbolt.org>>).
+We will use a ``decompiler`` to understand this main function (with <<https://dogbolt.org>>).
 </br>
 We can see a simplified version in ``source.c``.
 
