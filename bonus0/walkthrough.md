@@ -129,7 +129,7 @@ Program received signal SIGSEGV, Segmentation fault.
 ```
 
 0x41336141 = A3aA
-We crash on the 9th element of the chain. This means that EIP starts there, ``30 bytes to reach EIP`` (21 + 9).
+We crash on the ``9th element of the chain``. This means that EIP starts there.
 Now we need the address of the large 4096 buffer, which is where we will put the shellcode.
 This address is ``0xbfffe670``.
 
